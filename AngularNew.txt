@@ -1,0 +1,155 @@
+1. What is Angular?
+Angular is a TypeScript-based development framework for building modern, scalable web applications, including Single-Page Applications (SPAs). It provides features such as components, directives, pipes, forms, services, dependency injection, data binding, routing, HTTP communication, and more.
+
+2. What is a Single-Page Application (SPA)?
+A Single-Page Application is a web application that dynamically updates the content of the current page without requiring a full-page reload during navigation.
+
+3. What are Components in Angular?
+Components are the fundamental building blocks of an Angular application. They control a specific part of the user interface and are defined using the @Component decorator. A component typically consists of:
+
+Template — defines the UI.
+Styles — define the appearance.
+TypeScript class — contains the component's logic.
+
+4. What are Angular Modules?
+An Angular module is a mechanism for organizing related application functionality, such as components, directives, pipes, and services. Modules are defined using the @NgModule decorator. Traditional Angular applications commonly use:
+
+Root Module
+Feature Modules
+
+The root module typically imports BrowserModule, while feature modules traditionally import CommonModule.
+
+5. What are Directives in Angular?
+Directives are classes that add behavior to DOM elements or modify their structure.
+
+Common categories include:
+
+Component directives — directives with their own templates.
+Attribute directives — modify the appearance or behavior of an element, such as ngClass and ngStyle.
+Structural directives — modify the DOM structure, traditionally including *ngIf, *ngFor, and *ngSwitch.
+Custom directives — application-specific directives created by developers.
+
+CLI command:
+
+ng generate directive directiveName
+
+or:
+
+ng g d directiveName
+
+6. What are Angular Forms?
+Angular provides two primary approaches to building forms:
+
+Template-Driven Forms
+
+The form structure and validation are primarily defined in the HTML template. They are suitable for relatively simple forms.
+
+Reactive Forms
+
+The form model is created programmatically in TypeScript using classes such as FormGroup, FormControl, and FormArray. Reactive Forms are particularly useful for complex forms, dynamic controls, and programmatic validation.
+
+7. What are Pipes in Angular?
+Pipes transform data into a different format before displaying it in the UI.
+
+Examples of built-in pipes:
+
+uppercase
+lowercase
+currency
+date
+decimal
+percent
+
+Angular also supports:
+
+Parameterized pipes
+Chaining multiple pipes
+Custom pipes
+
+CLI command:
+
+ng generate pipe pipeName
+
+8. What are Services in Angular?
+A service is a reusable TypeScript class used to encapsulate shared functionality or data. Services are commonly used for:
+
+API communication
+Business logic
+Sharing data between components
+Reusable functionality
+
+Services are commonly decorated with @Injectable().
+
+9. What is Dependency Injection (DI)?
+Dependency Injection is a design pattern used by Angular to provide required dependencies, such as services, to components, directives, and other classes.
+
+Instead of manually creating service objects, Angular's dependency injection system manages their creation and provides them where required.
+
+10. What is Data Binding in Angular?
+Data binding establishes communication between the component's TypeScript logic and its HTML template.
+
+Main types include:
+
+One-way binding
+
+Interpolation: {{ value }}
+Property binding: [property]
+Attribute binding: [attr.attribute]
+Class binding: [class]
+Style binding: [style]
+Event binding: (event)
+
+Two-way binding
+
+[(ngModel)]
+
+Two-way binding is commonly called banana-in-a-box syntax.
+
+11. What is Routing in Angular?
+Angular Routing allows an application to navigate between different views or components without performing a full-page reload. Routes define which component should be displayed for a particular URL.
+
+12. What are Lifecycle Hooks in Angular?
+Lifecycle hooks allow developers to execute logic at specific stages of a component's lifecycle.
+
+Important hooks include:
+
+ngOnChanges()
+ngOnInit()
+ngDoCheck()
+ngAfterContentInit()
+ngAfterContentChecked()
+ngAfterViewInit()
+ngAfterViewChecked()
+ngOnDestroy()
+
+For example, ngOnInit() is commonly used for initialization logic, while ngOnDestroy() is used for cleanup such as unsubscribing from observables.
+
+13. What is the difference between Interpolation and Property Binding?
+
+Interpolation
+
+<h2>{{ userName }}</h2>
+
+It is primarily used to display component data in the template.
+
+Property Binding
+
+<button [disabled]="isDisabled">Submit</button>
+
+It binds a DOM property to a value from the component.
+
+Both are forms of one-way data binding.
+
+14. What is an Observable?
+An Observable represents a sequence of values that can be emitted over time. Observables are widely used in Angular for asynchronous operations, event handling, HTTP requests, and communication between different parts of an application.
+
+15. What is RxJS?
+RxJS, or Reactive Extensions for JavaScript, is a library for reactive programming using Observables. It provides Observables, Subjects, and numerous operators for handling asynchronous data streams and events.
+
+16. What is AOT Compilation?
+Ahead-of-Time (AOT) compilation compiles Angular templates and application code during the build process before the application is delivered to the browser.
+
+Modern Angular applications use AOT by default for production-oriented builds.
+
+17. What is JIT Compilation?
+Just-in-Time (JIT) compilation compiles the application at runtime. It is commonly associated with development workflows where compilation happens while the application is being served.
