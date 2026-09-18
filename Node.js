@@ -1,0 +1,121 @@
+1. What is node js ?.
+    -> Node JS is an Open Source Java Script Platform used to develop fast and scalable server-side and networking applications very easily.
+    -> in other words node js is a open source, cross-paltform, run time environment that runs on V8 engine and excutes javascript outside web browsers.
+    ->  Node.js can be used to build different types of applications such as command line application, 
+         web application, real-time chat application, REST API server etc. However, it is mainly used to build 
+         network programs like web servers, similar to PHP, Java, or ASP.NET.
+    -> Node.js was written and introduced by Ryan Dahl in 2009.
+    -> Node has Implemented the Global Object along with Original Java Script Code.
+
+2. What are the advantages of node js ?.
+    -> It is a Open Source.
+    -> Since node js follows single threaded event loop architecture, we can biuld fast and scalable applications.
+    -> And also Helps in building cross-platform applications.
+    -> Asynchronous by default. So it performs faster than other frameworks.
+
+3. Disadvantage of node js ?.
+    -> Reduces performance when handling heavy computational tasks.
+    -> Because node js follows Asynchronous programming approach, it relies alot on callbacks, 
+        this directly impacts the performance.
+    -> this makes code tedious to understand and maintain the code.
+
+4. node js Roles ?.
+    1. Run Server
+        -> Node.js can create a server and listen to incoming requests.
+    2. Business Logic
+        -> Handle requests.
+        -> Validate input.
+        -> Connect to database.
+    3. Responses
+        -> Return Responses(HTML pages, JSON…)
+
+5. Execution of Node JS Code
+    -> Node JS Code can be Executed in Two Ways
+        1. Using REPL
+            REPL REP :- way of executing can be used for practicing purpose , note for storing, Code we have written 
+            Is just for temporary
+                R - > Reading Input
+                E - > Executing Input 
+                P - > Printing 
+                L - > Loping for Next Input
+        2 . Using Files
+            Creating JavaScript File and writing the Code and Executing.
+
+6. GLobals in node js ?.
+    -> Node.js global objects are global in nature and they are available in all modules.
+    -> These objects are modules,functions, strings and object itself as below.
+        -> __filename
+        -> __dirname
+        -> setTimeout()
+        -> setInterval()
+        -> clearTimeout()
+        -> clearInterval()
+        -> Module
+        -> Console
+        -> Process
+
+7. What are Module system in node js ?.
+    -> In Node.js, Modules are the blocks of encapsulated code that communicates with an external application on the basis of their related functionality.
+    -> Modules can be a single file or a collection of multiples files/folders.
+    -> node js supports three types of modules.
+
+        1. Core Modules :- 
+            -> Core Modules are the Modules Provided by the Node JS itself but Module is not available in 
+              script File until we import the Module.
+            -> Examples : fs Module , os Module, path Module, url Module, http Module, Buffer Module.
+      
+        2. Third Party Modules :- 
+            -> Third Party Modules are the Modules provided by the node package manager.
+            -> How to Use the Third party Module :
+                1. npm install module-name
+                2. const preferedName = require(“module-name”);
+        
+        3. Local Module :- 
+            -> Local Module is defined as the Module created by us and used in other script Files to add the 
+               extra features.
+
+8. File Systems (fs):-
+    -> The fs module provides a lot of very useful functionality to access and interact with the file system.
+    -> There is no need to install it. Being part of the Node.js core, it can be used by simply requiring it as below:
+         const fs = require('fs')
+    -> Once you do so, you have access to all its methods, which include:
+    -> directory methods
+        1. fs.access()                  : check if the file exists and Node.js can access it with its permissions.
+        2. fs.mkdir('path', ()=>{})     : this is method will create a directory, it will take two arguments the path(the path where we want to create the file) 
+                                          and a callback function (this call back funtion can be used to handle errors if there is any, like the given path not found error)
+        3. fs.readdir('path', ()=>{})   : this function can be used to read all the files inside a specified directory. it also take same arguments like mkdir()
+        4. fs.rmdir('path', ()=>{})     : this function is used to delete the existing directory. arguments is same as above methods.
+        5. existsSync('path', ()=>{})   : this method will give us the boolean Values. it'll take one argument which is the path of the directory which needs to be deleted.
+    
+    -> file methods 
+
+        1. writeFile('path','content of the file', ()=>{}) 
+
+        2. readFile('path', ()=>{}) 
+        
+        3. appendFile('path','content of the new file', ()=>{}) 
+        
+        4. renameFile('path','new name of the file', ()=>{}) 
+        
+        5. unlinkFile('path',()=>{})
+        
+        6. open("path", ()=>{})
+        
+        7. close("path",()=>{})
+    
+    -> createWriteStream( 'path', {encodeing:'utf-8'})
+
+    -> createReadStream( 'path', {encodeing:'utf-8'})
+    
+    ->readStream.pipe(WriteStream)
+
+9. Events module:-
+    -> The events module provides us with the EventEmitter class, which can be used to create, fire, and listen for our own events.
+    -> The EventEmitter class is defined in the events module, and it can be accessed by requiring the events module as below:
+        const EventEmitter = require('events');
+    -> Once you do so, you have access to all its methods, which include:
+        1. on() : This method is used to register an event listener for a specific event.
+        2. emit() : This method is used to trigger an event and call all the registered listeners for that event.
+        3. once() : This method is similar to on(), but it registers a listener that will be called only once for the specified event.
+        4. removeListener() : This method is used to remove a specific listener for a specific event.
+        5. removeAllListeners() : This method is used to remove all listeners for a specific event.
